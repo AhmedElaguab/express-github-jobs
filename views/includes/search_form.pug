@@ -1,0 +1,19 @@
+section.mb-4
+  .container
+    form(action="")
+      .form-row.align-items-center
+        .col-12.col-md-6.col-lg
+          .form-group
+            label(for='description') Job Description
+            input#description.form-control.form-control-lg(type='text', name="description" placeholder='Filter by title, benefits, companies, expertise')
+        .col-12.col-md-6.col-lg
+          .form-group
+            label(for='location') Location
+            input#location.form-control.form-control-lg(type='password', name="location" placeholder='Filter by city, state, zip code or country')
+        .col-12.col-md-12.col-lg-2
+          .form-group.form-check
+            input#fulltime.form-check-input(type='checkbox', name="fulltime")
+            label.form-check-label(for='fulltime') Full Time Only
+        .col-12.col-md-12.col-lg-2
+            button.btn.btn-primary.btn-lg.btn-block(type='submit') Search
+
