@@ -1,7 +1,15 @@
 extends layout
 
+include includes/mixins
+
 block content
   include includes/header.pug
   include includes/search_form.pug
-  h1= title
-  p Welcome to #{title}
+  
+  section
+    .container
+      ul.list-unstyled
+        each job, index in jobs
+          +job_card(job)
+        else
+          li.h4 Nothing found.

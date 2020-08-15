@@ -1,0 +1,12 @@
+mixin job_card(job)
+  li.card.mb-3
+    .card-body.d-flex
+      div.flex-grow-1
+        a(href=`/jobs/${job.id}`)
+          h4.card-title.text-dark= job.title
+        h5.card-subtitle.text-muted
+          a.text-muted(href=job.company_url) #{job.company} | 
+          span.text-success= job.type 
+      div
+        h5.text-right.text-muted= job.location
+        h5.text-right.text-muted= new Date(job.created_at).toLocaleString()
