@@ -1,9 +1,13 @@
 const axios = require('axios').default;
 
+const BASE_URL = 'https://jobs.github.com/positions.json';
+
 async function getAllJobs() {
-  return axios.get('https://jobs.github.com/positions.json').then((res) => {
-    return res.data;
-  });
+  return axios.get(BASE_URL).then((res) => res.data);
 }
 
-module.exports = { getAllJobs };
+async function getJobs(params) {
+  return axios.get(BASE_URL, { params }).then((resp) => resp.data);
+}
+
+module.exports = { getAllJobs, getJobs };
