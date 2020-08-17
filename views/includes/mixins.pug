@@ -10,3 +10,30 @@ mixin job_card(job)
       div
         h5.text-right.text-muted= job.location
         h5.text-right.text-muted= new Date(job.created_at).toLocaleString()
+
+
+mixin job_details(job)
+  h5.text-muted
+    span= job.type
+    span.mx-3 |
+    span= job.location
+  h2.my-3= job.title
+  hr
+  .d-flex.flex-column.flex-md-row
+    .col-md-8.mb-4
+      div!= job.description
+    .col-md-4
+      div
+        .card.text-white.bg-secondary.mb-3(style='max-width: 18rem;')
+          .card-header About Company
+          div.p-4
+            img.card-img-top(src=job.company_logo, alt=job.company)
+          .card-body
+            h5.card-title= job.company
+            a.btn.btn-primary(href=job.company_url, target="_blank") Visit Website
+      div
+        .card.text-white.bg-success.mb-3(style='max-width: 18rem;')
+          .card-header How To Apply
+          .card-body.card-body-dark
+            div.card-text!= job.how_to_apply
+

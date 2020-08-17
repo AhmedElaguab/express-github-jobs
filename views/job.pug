@@ -1,0 +1,10 @@
+extends layout
+
+include includes/mixins
+
+block content
+  include includes/header.pug
+  
+  section
+    .container
+      +job_details(job)

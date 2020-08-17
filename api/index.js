@@ -7,7 +7,13 @@ async function getAllJobs() {
 }
 
 async function getJobs(params) {
-  return axios.get(BASE_URL, { params }).then((resp) => resp.data);
+  return axios.get(BASE_URL, { params }).then((res) => res.data);
 }
 
-module.exports = { getAllJobs, getJobs };
+async function getJobById(jobId) {
+  return axios
+    .get(`https://jobs.github.com/positions/${jobId}.json`)
+    .then((res) => res.data);
+}
+
+module.exports = { getAllJobs, getJobs, getJobById };
