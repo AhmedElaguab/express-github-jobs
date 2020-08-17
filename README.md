@@ -7,7 +7,7 @@ This is my implementaion of a Github Jobs website clone, using their API.
 Download the example:
 
 ```shell
-git clone https://github.com/AhmedElaguab/tailwind-screencasts.git
+git clone https://github.com/AhmedElaguab/express-github-jobs.git
 ```
 
 Install it and run:
